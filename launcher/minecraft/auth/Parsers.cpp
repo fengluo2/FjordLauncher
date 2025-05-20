@@ -286,7 +286,6 @@ decoded base64 "value":
 
 bool parseMinecraftProfileMojang(QByteArray& data, MinecraftProfile& output)
 {
-    return true;
     qDebug() << "Parsing Minecraft profile...2";
     qCDebug(authCredentials()) << data;
 

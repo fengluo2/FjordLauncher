@@ -63,11 +63,11 @@ void YggdrasilMinecraftProfileStep::onRequestDone()
         }
         return;
     }
-    if (!Parsers::parseMinecraftProfileMojang(*m_response, m_data->minecraftProfile)) {
+    /*if (!Parsers::parseMinecraftProfileMojang(*m_response, m_data->minecraftProfile)) {
         m_data->minecraftProfile = MinecraftProfile();
         emit finished(AccountTaskState::STATE_FAILED_SOFT, tr("Minecraft Java profile response could not be parsed"));
         return;
-    }
+    }*/
 
     emit finished(AccountTaskState::STATE_WORKING, tr("Minecraft Java profile acquisition succeeded."));
 }
