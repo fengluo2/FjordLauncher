@@ -60,3 +60,5 @@ flatbuild
 
 # Snap
 *.snap
+/CMakePresets.json
+/CMakeUserPresets.json

@@ -142,7 +142,7 @@ bool parseXTokenResponse(QByteArray& data, Token& output, QString name)
 
 bool parseMinecraftProfile(QByteArray& data, MinecraftProfile& output)
 {
-    qDebug() << "Parsing Minecraft profile...";
+    qDebug() << "Parsing Minecraft profile...1";
     qCDebug(authCredentials()) << data;
 
     QJsonParseError jsonError;
@@ -286,7 +286,8 @@ decoded base64 "value":
 
 bool parseMinecraftProfileMojang(QByteArray& data, MinecraftProfile& output)
 {
-    qDebug() << "Parsing Minecraft profile...";
+    return true;
+    qDebug() << "Parsing Minecraft profile...2";
     qCDebug(authCredentials()) << data;
 
     QJsonParseError jsonError;

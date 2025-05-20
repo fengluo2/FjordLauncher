@@ -94,7 +94,7 @@ void AuthlibInjectorLoginDialog::accept()
     ui->errorMessage->setVisible(false);
     auto fixedAuthlibInjectorUrl = AuthlibInjectorLoginDialog::fixUrl(ui->authlibInjectorTextBox->text());
 
-    auto response = CustomMessageBox::selectable(this, QObject::tr("Confirm account creation"),
+    /*auto response = CustomMessageBox::selectable(this, QObject::tr("Confirm account creation"),
                                                  QObject::tr("Warning: you are about to send the username and password you entered to an "
                                                              "unofficial, third-party authentication server:\n"
                                                              "%1\n\n"
@@ -104,7 +104,7 @@ void AuthlibInjectorLoginDialog::accept()
                                                  QMessageBox::Warning, QMessageBox::Yes | QMessageBox::No, QMessageBox::No)
                         ->exec();
     if (response != QMessageBox::Yes)
-        return;
+        return;*/
 
     setUserInputsEnabled(false);
     ui->loadingLabel->setVisible(true);

@@ -1119,7 +1119,7 @@ bool Application::createSetupWizard()
     bool validIcons = m_themeManager->isValidIconTheme(settings()->get("IconTheme").toString());
     bool login = !m_accounts->anyAccountIsValid() && capabilities() & Application::SupportsMSA;
     bool themeInterventionRequired = !validWidgets || !validIcons;
-    bool wizardRequired = javaRequired || languageRequired || pasteInterventionRequired || themeInterventionRequired || askjava || login;
+    bool wizardRequired = javaRequired || languageRequired || pasteInterventionRequired || themeInterventionRequired || askjava;
     if (wizardRequired) {
         // set default theme after going into theme wizard
         if (!validIcons)
@@ -1157,13 +1157,13 @@ bool Application::createSetupWizard()
         }
 
         if (login) {
-            m_setupWizard->addPage(new LoginWizardPage(m_setupWizard));
+            // m_setupWizard->addPage(new LoginWizardPage(m_setupWizard));
         }
         connect(m_setupWizard, &QDialog::finished, this, &Application::setupWizardFinished);
         m_setupWizard->show();
     }
 
-    return wizardRequired || login;
+    return wizardRequired;
 }
 
 bool Application::updaterEnabled()
@@ -1255,7 +1255,7 @@ void Application::performMainStartupAction()
             return;
         }
     }
-    {
+    /*{
         bool shouldFetch = m_settings->get("FlameKeyShouldBeFetchedOnStartup").toBool();
         if (shouldFetch && !(capabilities() & Capability::SupportsFlame)) {
             QMessageBox msgBox{ m_mainWindow };
@@ -1279,7 +1279,7 @@ void Application::performMainStartupAction()
             }
             m_settings->set("FlameKeyShouldBeFetchedOnStartup", false);
         }
-    }
+    }*/
     if (!m_mainWindow) {
         // normal main window
         showMainWindow(false);
